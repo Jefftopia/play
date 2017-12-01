@@ -14,4 +14,8 @@ export class ApiService {
     public getFares(): Observable<Response> {
         return this.http.get(`${ApiChannel.MAIN}/fares.json`);
     }
+
+    public getMaps(): Observable<Response> {
+        return this.http.get(`${ApiChannel.MAIN}/map-data.json`);
+    }
 }

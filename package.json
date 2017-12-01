@@ -30,6 +30,8 @@
     "@types/node": "^8.0.50",
     "bootstrap": "^4.0.0-beta",
     "core-js": "^2.4.1",
+    "d3": "^4.12.0",
+    "d3-geo": "^1.9.0",
     "dataframe-js": "^1.2.4",
     "express": "^4.15.4",
     "install": "^0.10.1",
@@ -39,6 +41,7 @@
     "rimraf": "^2.5.2",
     "rxjs": "5.5.2",
     "sass-lint": "^1.11.1",
+    "topojson": "^3.0.2",
     "typescript": "~2.4.2",
     "whatwg-fetch": "^2.0.3",
     "zone.js": "^0.8.18"

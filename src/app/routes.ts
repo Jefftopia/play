@@ -5,6 +5,10 @@ const ROUTES: Routes = [
     {
         loadChildren: './landing/module#LandingModule',
         path: ''
+    },
+    {
+        loadChildren: './worldwide/module#WorldwideModule',
+        path: 'worldwide'
     }
 ];
 
