@@ -28,7 +28,7 @@ export class MapComponent implements AfterViewInit {
     public buildMap(): void {
         const width: number = 960;
         const height: number = 720;
-        const speed: number = 1e-2;
+        const speed: number = 0.05;
         const start: number = Date.now();
 
         const sphere: {} = { type: 'Sphere' };
@@ -63,7 +63,7 @@ export class MapComponent implements AfterViewInit {
             context.beginPath();
             path(sphere);
             context.lineWidth = 3;
-            context.strokeStyle = '#000';
+            context.strokeStyle = '#fff';
             context.stroke();
 
             context.beginPath();

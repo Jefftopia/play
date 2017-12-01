@@ -4,11 +4,17 @@ import { Route, RouterModule, Routes } from '@angular/router';
 const ROUTES: Routes = [
     {
         loadChildren: './landing/module#LandingModule',
-        path: ''
+        path: '',
+        data: {
+            animation: ''
+        }
     },
     {
         loadChildren: './worldwide/module#WorldwideModule',
-        path: 'worldwide'
+        path: 'worldwide',
+        data: {
+            animation: 'worldwide'
+        }
     }
 ];
 
