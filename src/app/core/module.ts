@@ -1,5 +1,5 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { Http, HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import * as Service from './services/index';
 import * as State from './state/index';
@@ -10,7 +10,7 @@ import { EffectsModule } from '@ngrx/effects';
 @NgModule({
     declarations: [],
     imports: [
-        HttpModule,
+        HttpClientModule,
         EffectsModule.forRoot(State.APP_EFFECTS),
         StoreModule.forRoot(State.APP_REDUCERS, { initialState: State.APP_DEFAULT_STATE })
     ],

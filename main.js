@@ -1,12 +1,15 @@
 const { app, BrowserWindow } = require('electron')
+const displayScreen = app.screen;
 
 let win;
 
 function createWindow() {
-  // Create the browser window.
+    // Create the browser window.
+    const displayProps = displayScreen.getPrimaryDisplay();
+
     win = new BrowserWindow({
-        width: 600, 
-        height: 600,
+        width: displayProps.size.width, 
+        height: displayScreen.size.height,
         backgroundColor: '#ffffff',
         icon: `file://${__dirname}/dist/assets/logo.png`
     });

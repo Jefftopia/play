@@ -8,9 +8,9 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class WorldwideBase {
 
-    private mapData: {};
+    public mapData: {};
 
     constructor(activatedRoute: ActivatedRoute) {
-        this.mapData = activatedRoute.snapshot.data.mapData.json();
+        this.mapData = activatedRoute.snapshot.data.mapData;
     }
 }

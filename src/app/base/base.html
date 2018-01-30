@@ -1,6 +1,7 @@
 <main>
     <!-- <router-outlet name="header" class="header"></router-outlet> -->
     <div class="content">
+        <a routerLink="/worldwide">Worldwide</a>        
         <div [@routerAnimation]="getRouteAnimation(route)">
             <router-outlet #route="outlet"></router-outlet>
         </div>
