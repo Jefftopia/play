@@ -4,10 +4,10 @@
   "description": "play",
   "scripts": {
     "ng": "ng",
-    "start": "webpack-dev-server --config webpack/webpack.dev.js --port=4200",
-    "build": "webpack --config webpack/webpack.prod.js",
     "dev": "ng serve",
     "build:prod": "ng build --prod",
+    "electron": "electron .",
+    "electron-build": "ng build --prod && electron .",
     "lint": "npm run ts-lint && npm run scss-lint",
     "scss-lint": "./node_modules/sass-lint/bin/sass-lint.js -c scsslint.yml -v -q",
     "ts-lint": "./node_modules/.bin/tslint --type-check -c tslint.json --project . './src/report-builder/**/*.ts'"
@@ -35,6 +35,7 @@
     "d3": "^4.13.0",
     "d3-geo": "^1.9.1",
     "dataframe-js": "^1.2.7",
+    "electron": "^1.7.11",
     "express": "^4.16.2",
     "hammerjs": "^2.0.8",
     "install": "^0.10.4",
@@ -50,33 +51,11 @@
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
+    "@angular-devkit/core": "0.0.29",
     "@angular/cli": "1.6.6",
     "@angular/language-service": "^5.2.2",
     "@ngtools/webpack": "1.9.6",
-    "cpy-cli": "^1.0.1",
-    "node-sass": "^4.7.2",
-    "tslint": "^5.9.1",
-    "webpack-dev-server": "~2.11.1",
-    "webpack": "~3.10.0",
-    "autoprefixer": "^7.2.5",
-    "css-loader": "^0.28.9",
-    "cssnano": "^3.10.0",
-    "exports-loader": "^0.6.4",
-    "file-loader": "^1.1.6",
-    "html-webpack-plugin": "^2.30.1",
-    "less-loader": "^4.0.5",
-    "postcss-loader": "^2.0.10",
-    "postcss-url": "^7.3.0",
-    "raw-loader": "^0.5.1",
-    "sass-loader": "^6.0.6",
-    "source-map-loader": "^0.2.3",
-    "istanbul-instrumenter-loader": "^3.0.0",
-    "style-loader": "^0.20.1",
-    "stylus-loader": "^3.0.1",
-    "url-loader": "^0.6.2",
-    "circular-dependency-plugin": "^4.4.0",
-    "webpack-concat-plugin": "2.4.2",
-    "copy-webpack-plugin": "^4.3.1",
-    "uglifyjs-webpack-plugin": "1.1.8"
+    "scss-lint": "0.0.0",
+    "tslint": "^5.9.1"
   }
 }
