@@ -1,23 +1,23 @@
-const { app, BrowserWindow } = require('electron')
-const displayScreen = app.screen;
+const electron = require('electron');
+const { app, BrowserWindow } = require('electron');
 
 let win;
 
 function createWindow() {
     // Create the browser window.
-    const displayProps = displayScreen.getPrimaryDisplay();
+    const { width, height } = electron.screen.getPrimaryDisplay().workAreaSize
 
     win = new BrowserWindow({
-        width: displayProps.size.width, 
-        height: displayScreen.size.height,
+        width: width, 
+        height: height,
         backgroundColor: '#ffffff',
-        icon: `file://${__dirname}/dist/assets/logo.png`
+        icon: `file://${__dirname}/dist/assets/XM_Logo_AllBlack_RGB.png`
     });
 
     win.loadURL(`file://${__dirname}/dist/index.html`)
 
   //// uncomment below to open the DevTools.
-  // win.webContents.openDevTools()
+//   win.webContents.openDevTools()
 
   // Event when the window is closed.
     win.on('closed', () => {

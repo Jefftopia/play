@@ -9,8 +9,18 @@ import './styles.scss';
 const windowRef: AppWindow = window;
 const configApi: string = windowRef.options.fetchUrl;
 
-if (process.env.ENV === 'production') {
-    enableProdMode();
+export function fetchLocal(url) {
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest
+        xhr.onload = function () {
+            resolve(new Response(xhr.responseText, { status: xhr.status }));
+        }
+        xhr.onerror = function () {
+            reject(new TypeError('Local request failed'));
+        }
+        xhr.open('GET', url);
+        xhr.send(null);
+    })
 }
 
 export function parseOptions(options: IOptions): Promise<NgModuleRef<AppModule>> {
@@ -25,7 +35,18 @@ export function parseOptions(options: IOptions): Promise<NgModuleRef<AppModule>>
 }
 
 export function parseResponse(res: Response): Promise<NgModuleRef<AppModule>> {
+    console.info('fetch response! ', res);
+
     return res.json().then(parseOptions);
 }
 
-fetch(configApi).then(parseResponse);
+if (process.env.ENV === 'production') {
+    enableProdMode();
+}
+
+if ( (/electron/i).test(navigator.userAgent) ) {
+    fetchLocal(configApi).then(parseResponse);
+} else {
+    fetch(configApi).then(parseResponse);
+}
+
